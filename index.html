@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBloggy - Stories, Ideas and Inspiration</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <h1 class="logo">MyBloggy</h1>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="predictor.html">Marks Predictor</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Log In / Sign Up buttons, or the name of the logged in user.
+             This small box is filled by script.js -->
+        <div id="user-box" class="user-box"></div>
+
+        <button id="theme-btn">🌗</button>
+        <button class="menu-toggle">≡</button>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero" id="home">
+        <h1>Stories, Ideas &amp; Inspiration</h1>
+        <h2 id="typing-text"></h2>
+        <p>
+            Articles on web development, AI and simple living. Everything here is
+            written while learning, so each topic is explained in plain words with
+            examples you can try yourself.
+        </p>
+        <a href="#blogs" class="btn">Explore Blogs</a>
+    </section>
+
+    <!-- ================= FEATURED ARTICLE ================= -->
+    <section>
+        <h2 class="section-title">Featured Article</h2>
+        <p class="section-subtitle">Our most read article this month</p>
+
+        <div class="featured">
+            <img src="images/img2.jpeg" alt="Featured article about Artificial Intelligence">
+
+            <div class="featured-content">
+                <span class="tag">AI</span>
+                <h3>The Future of AI in Everyday Life</h3>
+                <p>
+                    Artificial Intelligence is not only in science fiction movies anymore.
+                    See how it is changing healthcare, education and the way we work.
+                </p>
+                <a href="blog2.html" class="btn">Read Article</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TRENDING SLIDER ================= -->
+    <section>
+        <h2 class="section-title">Trending Topics</h2>
+        <p class="section-subtitle"></p>
+
+        <div class="slider">
+            <img id="slider-image" src="images/img1.jpeg" alt="Trending topic">
+
+            <div class="slider-content">
+                <h3 id="slider-title">Loading...</h3>
+                <p id="slider-text"></p>
+                <a href="#" id="slider-link" class="btn">Read More</a>
+            </div>
+
+            <div class="slider-dots" id="slider-dots"></div>
+        </div>
+    </section>
+
+    <!-- ================= BLOG LIST ================= -->
+    <section id="blogs">
+        <h2 class="section-title">Latest Blogs</h2>
+        <p class="section-subtitle">Search by title or choose a category</p>
+
+        <div class="toolbar">
+            <input type="text" id="search-input" placeholder="Search blogs...">
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="Tech">Tech</button>
+                <button class="filter-btn" data-category="AI">AI</button>
+                <button class="filter-btn" data-category="Lifestyle">Lifestyle</button>
+            </div>
+
+            <button id="open-blog-form-btn" class="write-blog-btn">&#9997;&#65039; Add New Blog</button>
+        </div>
+
+        <!-- ================= INLINE NEW BLOG FORM ================= -->
+        <div id="new-blog-box" class="predictor-box new-blog-box" style="display: none;">
+            <h3>Write a New Blog Post</h3>
+            <p id="author-badge-note" class="author-badge-note">
+                Writing as: <strong id="author-display-name">Guest</strong>
+            </p>
+
+            <form id="new-blog-form" novalidate>
+                <div class="form-row">
+                    <label for="new-blog-title">Blog Title</label>
+                    <input type="text" id="new-blog-title" placeholder="Give your blog a clear title (at least 5 characters)">
+                    <p class="error-text" id="new-blog-title-error"></p>
+                </div>
+
+                <div class="form-row form-row-dual">
+                    <div>
+                        <label for="new-blog-category">Category</label>
+                        <select id="new-blog-category">
+                            <option value="Tech">Tech</option>
+                            <option value="AI">AI</option>
+                            <option value="Lifestyle">Lifestyle</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="new-blog-image">Cover Image</label>
+                        <select id="new-blog-image">
+                            <option value="images/img1.jpeg">Web Development (Image 1)</option>
+                            <option value="images/img2.jpeg">Artificial Intelligence (Image 2)</option>
+                            <option value="images/img3.jpeg">Minimalism / Lifestyle (Image 3)</option>
+                            <option value="images/img4.jpeg">Programming (Image 4)</option>
+                            <option value="images/img5.jpeg">Git &amp; GitHub (Image 5)</option>
+                            <option value="images/img6.jpeg">Machine Learning (Image 6)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="new-blog-summary">Short Summary</label>
+                    <input type="text" id="new-blog-summary" placeholder="One sentence describing what this article is about">
+                    <p class="error-text" id="new-blog-summary-error"></p>
+                </div>
+
+                <div class="form-row">
+                    <label for="new-blog-content">Article Content</label>
+                    <textarea id="new-blog-content" rows="6" placeholder="Write your full article paragraphs here..."></textarea>
+                    <p class="error-text" id="new-blog-content-error"></p>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn">Publish Blog</button>
+                    <button type="button" id="close-blog-form-btn" class="btn btn-secondary">Cancel</button>
+                </div>
+
+                <p class="form-message" id="new-blog-message"></p>
+            </form>
+        </div>
+
+        <div class="blog-container">
+
+            <!-- CARD 1 -->
+            <div class="blog-card" data-category="Tech">
+                <img src="images/img1.jpeg" alt="Web development trends">
+                <div class="blog-content">
+                    <h3>Top Web Development Trends in 2026</h3>
+                    <p>New tools and ideas that are changing modern websites.</p>
+                    <a href="blog1.html" class="btn">Read More</a>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="blog-card" data-category="AI">
+                <img src="images/img2.jpeg" alt="Artificial intelligence">
+                <div class="blog-content">
+                    <h3>The Future of AI in Everyday Life</h3>
+                    <p>How Artificial Intelligence is becoming part of daily life.</p>
+                    <a href="blog2.html" class="btn">Read More</a>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="blog-card" data-category="Lifestyle">
+                <img src="images/img3.jpeg" alt="Minimal lifestyle">
+                <div class="blog-content">
+                    <h3>The Power of Minimalism</h3>
+                    <p>How removing extra things can improve your focus.</p>
+                    <a href="blog3.html" class="btn">Read More</a>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="blog-card" data-category="Tech">
+                <img src="images/img4.jpeg" alt="Student learning programming">
+                <div class="blog-content">
+                    <h3>How Students Can Learn Programming Faster</h3>
+                    <p>Simple study habits that help beginners write code.</p>
+                    <a href="blog4.html" class="btn">Read More</a>
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="blog-card" data-category="Tech">
+                <img src="images/img5.jpeg" alt="Version control and branching">
+                <div class="blog-content">
+                    <h3>Git and GitHub: A Beginner's Guide for Students</h3>
+                    <p>Why every student should learn version control.</p>
+                    <a href="blog5.html" class="btn">Read More</a>
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="blog-card" data-category="AI">
+                <img src="images/img6.jpeg" alt="Simple machine learning model">
+                <div class="blog-content">
+                    <h3>Machine Learning: A Simple Start for Students</h3>
+                    <p>What machine learning really is, explained simply.</p>
+                    <a href="blog6.html" class="btn">Read More</a>
+                </div>
+            </div>
+
+        </div>
+
+        <p id="no-result">No blog matched your search. Please try another word.</p>
+    </section>
+
+    <!-- ================= ABOUT THE AUTHOR ================= -->
+    <section id="about">
+        <h2 class="section-title">About The Author</h2>
+        <p class="section-subtitle">Student, developer and blogger</p>
+
+        <div class="about">
+            <img src="images/author.jpg" alt="Photo of the author">
+
+            <div class="about-content">
+                <span class="tag">Author</span>
+                <h3>Omkar Solat</h3>
+                <p>
+                    I am a third semester student learning web development. I write about
+                    the things I figure out each week: HTML, CSS, JavaScript and a little
+                    machine learning. I try to use the simple words I wish someone had
+                    used with me when I started.
+                </p>
+
+                <div class="author-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Web Design</span>
+                </div>
+
+                <a href="contact.html" class="btn">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= NEWSLETTER ================= -->
+    <section class="newsletter">
+        <h2>Subscribe To Our Newsletter</h2>
+        <p>Enter your email and press subscribe. Only the number of subscribers is saved.</p>
+
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+            <input type="text" id="newsletter-email" placeholder="Enter your email">
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+
+        <p class="form-message" id="newsletter-message"></p>
+        <p id="subscriber-count"></p>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-container">
+
+            <div>
+                <h3>MyBloggy</h3>
+                <p>A simple blogging website about web development, technology and simple living.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Follow</h3>
+                <ul>
+                    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="copyright">© 2026 MyBloggy - Web Application Development Project</p>
+    </footer>
+
+    <!-- ================= MODAL POPUP FOR CUSTOM BLOGS ================= -->
+    <div id="blog-modal" class="blog-modal" style="display: none;">
+        <div class="blog-modal-content">
+            <button id="close-modal-btn" class="close-modal" aria-label="Close">&times;</button>
+            <span id="modal-category" class="modal-tag"></span>
+            <h2 id="modal-title"></h2>
+            <div class="modal-meta">
+                <span>By <strong id="modal-author"></strong></span> &bull;
+                <span id="modal-date"></span>
+            </div>
+            <img id="modal-image" src="" alt="Blog cover" class="modal-img">
+            <div id="modal-body" class="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js?v=3"></script>
+</body>
+</html>

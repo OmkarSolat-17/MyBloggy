@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - MyBloggy</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <h1 class="logo">MyBloggy</h1>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#blogs">Blogs</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="predictor.html">Marks Predictor</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Log In / Sign Up buttons, or the name of the logged in user.
+             This small box is filled by script.js -->
+        <div id="user-box" class="user-box"></div>
+
+        <button id="theme-btn">&#127763;</button>
+        <button class="menu-toggle">&#8801;</button>
+    </nav>
+
+    <!-- ================= SIGN UP FORM ================= -->
+    <section>
+        <h2 class="section-title">Create An Account</h2>
+        <p class="section-subtitle">
+            Fill this form to make your account. All the fields are checked by JavaScript.
+        </p>
+
+        <div class="predictor-box">
+
+            <form id="signup-form" novalidate>
+
+                <div class="form-row">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" placeholder="For example: Omkar Solat">
+                    <p class="error-text" id="signup-name-error"></p>
+                </div>
+
+                <div class="form-row">
+                    <label for="signup-email">Email Address</label>
+                    <input type="text" id="signup-email" placeholder="example@gmail.com">
+                    <p class="error-text" id="signup-email-error"></p>
+                </div>
+
+                <div class="form-row">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="At least 6 characters">
+                    <p class="error-text" id="signup-password-error"></p>
+                </div>
+
+                <div class="form-row">
+                    <label for="signup-confirm">Confirm Password</label>
+                    <input type="password" id="signup-confirm" placeholder="Type the same password again">
+                    <p class="error-text" id="signup-confirm-error"></p>
+                </div>
+
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+
+            <p class="form-message" id="signup-message"></p>
+
+            <p class="auth-note">
+                Already have an account? <a href="login.html">Log in here</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3>MyBloggy</h3>
+                <p>A simple blogging website about web development, technology and simple living.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#blogs">Blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="copyright">© 2026 MyBloggy - Web Application Development Project</p>
+    </footer>
+
+    <script src="js/script.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git and GitHub: A Beginner's Guide for Students - MyBloggy</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <h1 class="logo">MyBloggy</h1>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#blogs">Blogs</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="predictor.html">Marks Predictor</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Log In / Sign Up buttons, or the name of the logged in user.
+             This small box is filled by script.js -->
+        <div id="user-box" class="user-box"></div>
+
+        <button id="theme-btn">&#127763;</button>
+        <button class="menu-toggle">&#8801;</button>
+    </nav>
+
+    <!-- ================= ARTICLE HEADING ================= -->
+    <section class="article-header">
+        <span class="tag">Tech</span>
+        <h1>Git and GitHub: A Beginner's Guide for Students</h1>
+        <p>By Omkar Solat | 10 August 2026</p>
+    </section>
+
+    <!-- ================= ARTICLE IMAGE ================= -->
+    <section class="article-image">
+        <img src="images/img5.jpeg" alt="Illustration of version control and branching">
+    </section>
+
+    <!-- ================= ARTICLE TEXT ================= -->
+    <section class="article-content">
+                <h2>
+                 Introduction
+                </h2>
+                <p>
+                 In my first semester I saved every project in a folder called
+                 <em>
+                  final-project-final-2
+                 </em>
+                 . By the end of the semester I had twelve folders with almost the same name and no idea which one actually worked. That is the day I understood why version control exists.
+                </p>
+                <p>
+                 Git is the tool that keeps a history of your work, and GitHub is the website that keeps a copy of it online. Together they are the first thing every student should learn after HTML and CSS.
+                </p>
+                <h2>
+                 What Is Version Control?
+                </h2>
+                <p>
+                 Version control is a system that records every change you make to your files. Instead of copying a whole folder and renaming it, you save small "snapshots" of your project with a short note. You can jump back to any snapshot at any time.
+                </p>
+                <p>
+                 Git runs on your own computer. GitHub is an online place where you upload those snapshots, so they are safe even if your laptop stops working.
+                </p>
+                <h2>
+                 Why Should Students Learn Git?
+                </h2>
+                <ul>
+                 <li>
+                  You can go back to an older version when a new change breaks your project.
+                 </li>
+                 <li>
+                  Your work is safe online, so a stolen or broken laptop does not end your semester.
+                 </li>
+                 <li>
+                  Teachers and teammates can see exactly what you changed and when.
+                 </li>
+                 <li>
+                  Almost every company expects it, even for internships.
+                 </li>
+                 <li>
+                  Group projects stop being a mess of WhatsApp file sharing.
+                 </li>
+                </ul>
+                <h2>
+                 Setting Up Git in Five Steps
+                </h2>
+                <ol>
+                 <li>
+                  Download Git from git-scm.com and install it with the default options.
+                 </li>
+                 <li>
+                  Open the terminal (Git Bash on Windows) and tell Git your name and email address.
+                 </li>
+                 <li>
+                  Go into your project folder and run
+                  <code>
+                   git init
+                  </code>
+                  to start tracking it.
+                 </li>
+                 <li>
+                  Select your files with
+                  <code>
+                   git add .
+                  </code>
+                  and save them with
+                  <code>
+                   git commit -m "first commit"
+                  </code>
+                  .
+                 </li>
+                 <li>
+                  Create a repository on GitHub and connect it to your folder with
+                  <code>
+                   git remote add origin
+                  </code>
+                  .
+                 </li>
+                </ol>
+                <h2>
+                 The Commands I Use Every Day
+                </h2>
+                <ul>
+                 <li>
+                  <code>
+                   git status
+                  </code>
+                  - shows which files have changed.
+                 </li>
+                 <li>
+                  <code>
+                   git add .
+                  </code>
+                  - selects all the changes for the next snapshot.
+                 </li>
+                 <li>
+                  <code>
+                   git commit -m "message"
+                  </code>
+                  - saves the snapshot with a note.
+                 </li>
+                 <li>
+                  <code>
+                   git push
+                  </code>
+                  - uploads your snapshots to GitHub.
+                 </li>
+                 <li>
+                  <code>
+                   git pull
+                  </code>
+                  - brings the newest changes down from GitHub.
+                 </li>
+                </ul>
+                <h2>
+                 Branches In Simple Words
+                </h2>
+                <p>
+                 A branch is a separate copy of your project where you can try something new without touching the working version. The main branch stays safe while you experiment. When the experiment works, you merge the branch back into main.
+                </p>
+                <p>
+                 For a small college project you can do everything on the main branch. It is still useful to know the idea, because in a real team everyone works on their own branch.
+                </p>
+                <h2>
+                 Mistakes I Made, So You Do Not Have To
+                </h2>
+                <ul>
+                 <li>
+                  Making one huge commit at the end of the day instead of saving small changes.
+                 </li>
+                 <li>
+                  Writing commit messages like "update" or "done". Write what actually changed.
+                 </li>
+                 <li>
+                  Uploading passwords or database keys along with the code.
+                 </li>
+                 <li>
+                  Forgetting to pull before pushing when working with a partner.
+                 </li>
+                </ul>
+                <h2>
+                 Conclusion
+                </h2>
+                <p>
+                 Git feels confusing for the first two days because it has a lot of new words. After that it becomes the most useful tool in your project folder. Start with
+                 <code>
+                  add
+                 </code>
+                 ,
+                 <code>
+                  commit
+                 </code>
+                 and
+                 <code>
+                  push
+                 </code>
+                 , and learn the rest when you actually need it.
+                </p>
+    </section>
+
+    <!-- ================= BACK BUTTON ================= -->
+    <section class="article-footer">
+        <a href="index.html#blogs" class="btn">&larr; Back To All Blogs</a>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3>MyBloggy</h3>
+                <p>A simple blogging website about web development, technology and simple living.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#blogs">Blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="copyright">&copy; 2026 MyBloggy - Web Application Development Project</p>
+    </footer>
+
+    <script src="js/script.js?v=3"></script>
+</body>
+</html>

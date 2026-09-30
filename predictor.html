@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Predictor - MyBloggy</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <h1 class="logo">MyBloggy</h1>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#blogs">Blogs</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="predictor.html">Marks Predictor</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Log In / Sign Up buttons, or the name of the logged in user.
+             This small box is filled by script.js -->
+        <div id="user-box" class="user-box"></div>
+
+        <button id="theme-btn">🌗</button>
+        <button class="menu-toggle">≡</button>
+    </nav>
+
+    <!-- ================= INTRO ================= -->
+    <section>
+        <h2 class="section-title">Marks Predictor</h2>
+        <p class="section-subtitle">
+            A small program that predicts exam marks from study hours and attendance.
+        </p>
+
+        <!-- ================= THE FORM ================= -->
+        <div class="predictor-box">
+
+            <!-- novalidate switches off the browser's own checking,
+                 so our JavaScript validation below is the one that runs -->
+            <form id="predict-form" novalidate>
+
+                <div class="form-row">
+                    <label for="hours">Study hours per day</label>
+                    <input type="number" id="hours" value="6" step="1" min="0" max="12">
+                    <p class="error-text" id="hours-error"></p>
+                </div>
+
+                <div class="form-row">
+                    <label for="attendance">Attendance (%)</label>
+                    <input type="number" id="attendance" value="85" step="1" min="0" max="100">
+                </div>
+
+                <button type="submit" class="btn">Predict Marks</button>
+            </form>
+
+            <div class="result-box">
+                <h3 id="result-marks">-</h3>
+                <p id="result-grade">Fill the form and press the button</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section>
+        <h2 class="section-title">How Does It Work?</h2>
+        <p class="section-subtitle">Simple maths, no library needed</p>
+
+        <div class="predictor-box">
+            <p>
+                I took marks of 12 students and drew the best straight line through
+                those points. The line is almost:
+            </p>
+            <p><strong>marks = 16 + (8 x study hours)</strong></p>
+            <p>
+                If attendance is below 60%, 10 marks are cut. The answer is then shown
+                above, and the bars below show the prediction for different study hours.
+            </p>
+
+            <div id="bars" style="margin-top: 20px;"></div>
+        </div>
+    </section>
+
+    <!-- ================= SAMPLE DATA ================= -->
+    <section>
+        <h2 class="section-title">The Data I Used</h2>
+        <p class="section-subtitle">These marks were used to find the formula</p>
+
+        <div class="predictor-box">
+            <table>
+                <tr>
+                    <th>Student</th>
+                    <th>Study hours</th>
+                    <th>Attendance</th>
+                    <th>Marks</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>58</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>62</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2.5</td>
+                    <td>70</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>66</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>74</td>
+                    <td>49</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>4.5</td>
+                    <td>80</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>78</td>
+                    <td>57</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>6</td>
+                    <td>85</td>
+                    <td>66</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>7</td>
+                    <td>83</td>
+                    <td>72</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>90</td>
+                    <td>81</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>92</td>
+                    <td>88</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>10</td>
+                    <td>95</td>
+                    <td>95</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3>MyBloggy</h3>
+                <p>A simple blogging website about web development, technology and simple living.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#blogs">Blogs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="copyright">© 2026 MyBloggy - Web Application Development Project</p>
+    </footer>
+
+    <script src="js/script.js?v=3"></script>
+</body>
+</html>
